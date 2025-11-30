@@ -27,6 +27,7 @@ DEMO_PROFILE = {
     "faceImageId": "170661" 
 }
 
+#Fetches live matches data
 def fetch_live_matches():
     url = "https://cricbuzz-cricket.p.rapidapi.com/matches/v1/recent"
     try:
@@ -52,6 +53,7 @@ def fetch_live_matches():
         print(f"API Error: {e}")
     return pd.DataFrame()
 
+#Fetch ICC rankings data
 def fetch_icc_rankings(category="batsmen", format_type="test"):
     url = "https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/" + category
     querystring = {"formatType": format_type}
@@ -65,6 +67,7 @@ def fetch_icc_rankings(category="batsmen", format_type="test"):
         pass
     return pd.DataFrame()
 
+#Fetch Recent matches data
 def fetch_recent_matches_list():
     url = "https://cricbuzz-cricket.p.rapidapi.com/matches/v1/recent"
     try:
@@ -75,6 +78,7 @@ def fetch_recent_matches_list():
         pass
     return {}
 
+#Fetch scorecard data
 def fetch_match_scorecard(match_id):
     url = f"https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/{match_id}/scard"
     try:
@@ -85,6 +89,7 @@ def fetch_match_scorecard(match_id):
         pass
     return None
 
+#Fetch player details from the database and print
 def search_player(name):
     url = "https://cricbuzz-cricket.p.rapidapi.com/stats/v1/player/search"
     querystring = {"name": name}
@@ -98,8 +103,9 @@ def search_player(name):
             return [{"id": "demo_1", "name": "Virat Kohli"}] 
     except Exception:
         pass
-    return [{"id": "demo_1", "name": "Virat Kohli"}] # Clean name
+    return [{"id": "demo_1", "name": "Virat Kohli"}] 
 
+#Fetch player profile from the database
 def fetch_player_profile(player_id):
     if player_id == "demo_1":
         return DEMO_PROFILE
