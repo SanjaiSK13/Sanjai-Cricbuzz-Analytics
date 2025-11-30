@@ -25,6 +25,7 @@ PLAYERS_DATA = [
     ("Kagiso Rabada", "Bowler", "South Africa"), ("Quinton de Kock", "Wicketkeeper", "South Africa")
 ]
 
+#Generate mock data in the required format for analysis
 def generate_data_safely():
     engine = get_engine()
     
