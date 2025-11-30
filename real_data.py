@@ -4,9 +4,10 @@ from utils.db_connection import get_engine
 from utils.api_handler import fetch_recent_matches_list, fetch_match_scorecard
 from datetime import datetime
 
+#Fetch data using Cricbuzz API and load it into the database
 def load_real_data():
     engine = get_engine()
-    print("📡 Contacting Cricbuzz for Recent Matches...")
+    print(" Contacting Cricbuzz for Recent Matches...")
     data = fetch_recent_matches_list()
     
     match_list = []
@@ -45,7 +46,7 @@ def load_real_data():
             exists = conn.execute(text("SELECT match_id FROM matches WHERE match_id=:mid"), {"mid": m['id']}).scalar()
             
             if not exists:
-                print(f"   ➕ Adding Real Match: {m['t1']} vs {m['t2']}")
+                print(f"  Adding Real Match: {m['t1']} vs {m['t2']}")
                 conn.execute(text("""
                     INSERT INTO matches (
                         match_id, data_source, series_name, match_type, match_desc, 
