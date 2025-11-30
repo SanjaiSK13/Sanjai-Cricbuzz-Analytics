@@ -10,7 +10,7 @@ def get_all_player_names():
         return df['player_name'].tolist()
     return []
 
-# 3. The 4 Main Operations
+# The 4 Main Operations
 tab1, tab2, tab3, tab4 = st.tabs(["🟢 CREATE", "🔵 READ", "🟠 UPDATE", "🔴 DELETE"])
 
 # Create Operation
