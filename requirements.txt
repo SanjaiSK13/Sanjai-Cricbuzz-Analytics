@@ -1,7 +1,8 @@
-streamlit
-pandas
-requests
-sqlalchemy
-mysql-connector-python  
-python-dotenv
-plotly
+streamlit>=1.32.0
+pandas>=2.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+plotly>=5.18.0
+altair>=5.2.0
+numpy>=1.26.0
+Pillow>=10.0.0
